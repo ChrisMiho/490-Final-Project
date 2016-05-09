@@ -1,0 +1,10 @@
+import matplotlib
+%matplotlib inline
+ 
+ 
+df = dataframe().toPandas()
+# Reshape data (produce a “pivot” table) based on column values
+names_over_year = df.pivot("Year", "Name", "Count")
+names_over_year.plot()          # Make plot of DataFrame using matplotlib
+fig = matplotlib.pyplot.gcf()   # Get a reference to the current figure
+fig.set_size_inches(18.5, 10.5) # Set the figure size
