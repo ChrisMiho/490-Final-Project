@@ -1,0 +1,41 @@
+//Used to grab all names from 1970 onwards
+
+SELECT Name, sum(Count), as Count FROM df WHERE Year >= 1970 GROUP BY Name ORDER BY Count desc
+
+
+IN SEAHORSE, a filter of Gender = 'F' or Gender = 'M' was used befor the below to SQL statements in order to seperate the genders
+
+
+//Used to select the popular female names
+select Name, Year, sum(Count) as Count
+   from df
+   where
+       Name = 'Amanda'
+       or Name = ‘Ashley'
+       or Name = ‘Elizabeth'
+       or Name = ‘Emily'
+       or Name = ‘Jennifer'
+       or Name = 'Jessica'
+       or Name = ‘Nicole'
+       or Name = ‘Samantha'
+       or Name = ‘Sarah'
+       or Name = ‘Stephanie'
+   group by Name, Year
+   order by Year
+
+//Used to select the popular male names
+select Name, Year, sum(Count) as Count
+   from df
+   where
+       Name = 'Andrew'
+       or Name = 'Christopher'
+       or Name = 'Daniel'
+       or Name = 'David'
+       or Name = 'Jacob'
+       or Name = 'James'
+       or Name = 'Joseph'
+       or Name = 'Joshua'
+       or Name = 'Mathew'
+       or Name = 'Michael'
+   group by Name, Year
+   order by Year
